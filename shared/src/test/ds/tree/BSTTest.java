@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by dpooni on 3/16/2017.
  */
-class BSTTest {
+public class BSTTest {
     @Test
     void traverseInorder() {
 
