@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class BSTTest {
     @Test
-    void traverseInorder() {
+    public void traverseInorder() {
 
         Node<Integer> root = new Node<>(3);
         Node<Integer> left = new Node<>(4);
@@ -26,7 +26,7 @@ public class BSTTest {
     }
 
     @Test
-    void traversePostOrder() {
+    public void traversePostOrder() {
 
 
         Node<Integer> root = new Node<>(3);
@@ -42,7 +42,7 @@ public class BSTTest {
     }
 
     @Test
-    void traversePreOrder() {
+    public void traversePreOrder() {
 
         Node<Integer> root = new Node<>(3);
         Node<Integer> left = new Node<>(4);
@@ -57,7 +57,7 @@ public class BSTTest {
     }
 
     @Test
-    void traverseLevelOrder() {
+    public void traverseLevelOrder() {
 
         Node<Integer> root = new Node<>(1);
         Node<Integer> left = new Node<>(2);
@@ -74,7 +74,7 @@ public class BSTTest {
     }
 
     @Test
-    void getSize() {
+    public void getSize() {
 
         Node<Integer> root = new Node<>(1);
         Node<Integer> left = new Node<>(2);
