@@ -7,13 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="client" />
+        <module name="server" />
         <module name="shared" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="aio" target="1.8" />
-      <module name="client" target="1.8" />
-      <module name="shared" target="1.8" />
+      <module name="aio" target="1.5" />
+      <module name="client" target="1.5" />
+      <module name="server" target="1.5" />
+      <module name="shared" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
