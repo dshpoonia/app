@@ -23,6 +23,14 @@
             <artifactId>junit5-engine</artifactId>
             <version>5.0.0-ALPHA</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
+
     </dependencies>
 
 
