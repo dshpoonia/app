@@ -1,12 +1,8 @@
 package programs.com.bookingDotCom;
 
 import com.google.common.collect.Lists;
-import com.sun.deploy.util.StringUtils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by deepak.poonia on 12-04-2017.
@@ -30,43 +26,47 @@ public class ArrangeStrings {
         System.out.println(reArrange(input));
     }
 
-    private static Set<String> reArrange(List<String> input) {
+    private static List<String> reArrange(List<String> input) {
 
-        Map<Character, String> f = new HashMap<>();
-        Map<Character, String> l = new HashMap<>();
-
-        for(String s: input){
-            //s = s.toLowerCase();
-            f.put(s.charAt(0), s);
-            char key = Character.toUpperCase(s.charAt(s.length() - 1));
-            l.put(key, s);
-
-            if(!f.containsKey(key)){
-                f.put(key, null);
-            }
-
-        }
-
-        Character ending = getEndingChar(f);
+        Map<Character, String> o = new HashMap<>();
+        Map<Character, String> r = new HashMap<>();
 
         for(String s : input){
-            String x = l.get(ending);
-            System.out.println(x);
-            ending = x.charAt(0);
+            o.put(s.charAt(0), s);
+
+           char key = Character.toUpperCase(s.charAt(s.length() - 1));
+
+           if(!o.containsKey(key)){
+               o.put(key, null);
+           }
+
+            r.put(key, s);
         }
 
-        //System.out.println(f);
-        //System.out.println(l);
-                return null;
+        char c = getCharForLastString(o);
+
+        List<String> out = new ArrayList<>(input.size());
+
+        for(int i = 0; i < input.size(); i++){
+            String e = r.get(c);
+            out.add(e);
+            c = Character.toUpperCase(e.charAt(0));
+
+        }
+
+       out = Lists.reverse(out);
+        return out;
+
     }
 
-    private static Character getEndingChar(Map<Character, String> f) {
-        for (Character character : f.keySet()) {
-            if(f.get(character) == null){
-                return character;
+    private static char getCharForLastString(Map<Character, String> o) {
+        for(Character c : o.keySet()){
+            if(o.get(c) == null){
+                return c;
             }
         }
 
-        return null;
+        throw new RuntimeException("check input");
     }
+
 }
