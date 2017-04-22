@@ -36,9 +36,9 @@ public class ArrangeStrings {
         Map<Character, String> l = new HashMap<>();
 
         for(String s: input){
-            s = s.toLowerCase();
+            //s = s.toLowerCase();
             f.put(s.charAt(0), s);
-            char key = s.charAt(s.length() - 1);
+            char key = Character.toUpperCase(s.charAt(s.length() - 1));
             l.put(key, s);
 
             if(!f.containsKey(key)){
